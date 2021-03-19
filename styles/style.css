@@ -1,0 +1,38 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+div {
+  width: 60%;
+  margin: auto;
+  border: 1px solid lightgrey;
+}
+
+#todoInput {
+  width: calc(100% - 8px);
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.completed {
+  color: grey;
+  text-decoration: line-through;
+}
+
+p {
+  background-color: black;
+  color: white;
+}

@@ -6,19 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div>
       <h1>TodoList</h1>
       <form>
-        <input type="text" placeholder="What needs to be done?" />
+        <input
+          id="todoInput"
+          type="text"
+          placeholder="What needs to be done?"
+        />
       </form>
       <ul>
         <li>
           <label><input type="checkbox" />Sweep the floor</label>
         </li>
-        <li>
-          <label><input type="checkbox" />Dust the vases</label>
+        <li class="completed">
+          <label><input type="checkbox" checked="true" />Dust the vases</label>
         </li>
       </ul>
       <p><span>Todo: 1</span> · <span>Done: 0</span> · <span>Total 1</span></p>
