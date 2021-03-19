@@ -100,7 +100,7 @@ function removeDoneTodos() {
 
   // Stap 4a: Selecteer alle done todos
   var completedTodos = document.querySelectorAll(".completed");
-  //   console.log(completedTodos);
+  console.log(completedTodos);
   // Stap 4b: loop over die todos heen
   for (let counter = 0; counter < completedTodos.length; counter++) {
     const todoItem = completedTodos[counter];

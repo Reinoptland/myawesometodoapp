@@ -4,6 +4,7 @@ body {
 
 h1 {
   text-align: center;
+  color: hotpink;
 }
 
 div {
@@ -33,6 +34,6 @@ li {
 }
 
 p {
-  background-color: black;
-  color: white;
+  background-color: hotpink;
+  color: black;
 }
