@@ -63,7 +63,7 @@ function addNewTodo(event) {
   // Stap 1: haal de text uit het invul veld
   var inputElement = document.getElementById("todoInput");
   var todoText = inputElement.value;
-  console.log(todoText);
+  //   console.log(todoText);
   // Stap 2: maak het inveld weer leeg
   inputElement.value = null;
   // Stap 3: Maak een nieuw todoItem aan (li, label, input (checkbox), text)
@@ -82,8 +82,8 @@ function addNewTodo(event) {
   // </li>
   //   console.log(newTodoElement);
   // Stap 4: plak de nieuwe todo op de pagina
-  var ulElement = document.getElementById("todoList");
-  ulElement.appendChild(newTodoElement);
+  var todoList = document.getElementById("todoList");
+  todoList.appendChild(newTodoElement);
 
   updateCounters();
 }
@@ -91,3 +91,30 @@ function addNewTodo(event) {
 var formElement = document.querySelector("form");
 
 formElement.addEventListener("submit", addNewTodo);
+
+// Alle done todos wille we opruimen
+// Stap 3: Schrijf een functie
+function removeDoneTodos() {
+  //   console.log("I GOT CLICKED!");
+  // Stap 4: Zorg dat de functie alle todos die completed zijn verwijderd
+
+  // Stap 4a: Selecteer alle done todos
+  var completedTodos = document.querySelectorAll(".completed");
+  //   console.log(completedTodos);
+  // Stap 4b: loop over die todos heen
+  for (let counter = 0; counter < completedTodos.length; counter++) {
+    const todoItem = completedTodos[counter];
+    // console.log("1 tegelijk??");
+    // console.log(todoItem);
+    // Stap 4c: verwijder de todos
+    todoItem.remove();
+  }
+
+  updateCounters();
+}
+
+// X Stap 1: maak een knopje
+var removeDoneButton = document.getElementById("removeDoneButton");
+console.log(removeDoneButton);
+// Stap 2: luister naar klik events en voer dan een functie uit
+removeDoneButton.addEventListener("click", removeDoneTodos);
