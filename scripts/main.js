@@ -26,3 +26,32 @@ function updateCounters() {
 }
 
 updateCounters();
+
+function toggleDone(event) {
+  //   console.log(event);
+  // get the checkbox from the event object
+  var checkbox = event.target;
+
+  var listItem = checkbox.parentElement.parentElement;
+  if (checkbox.checked) {
+    listItem.className = "completed";
+    // change the checkbox so that it shows up as completed
+  } else {
+    listItem.className = "";
+    // change the checkbox so that it shows up as todo
+  }
+
+  updateCounters();
+  // update the counters, now that we have updated the checkbox
+}
+
+var allCheckBoxes = document.querySelectorAll("input[type=checkbox]");
+// console.log(allCheckBoxes);
+// add a "change" event listener to every checkbox,
+for (let counter = 0; counter < allCheckBoxes.length; counter++) {
+  const checkbox = allCheckBoxes[counter];
+  //   console.log("1 element tegeliijk????");
+  //   console.log(checkbox);
+  checkbox.addEventListener("change", toggleDone);
+}
+// and use the "toggleDone" function as the callback
