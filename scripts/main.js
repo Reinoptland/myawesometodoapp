@@ -55,3 +55,36 @@ for (let counter = 0; counter < allCheckBoxes.length; counter++) {
   checkbox.addEventListener("change", toggleDone);
 }
 // and use the "toggleDone" function as the callback
+
+function addNewTodo(event) {
+  event.preventDefault();
+  //   console.log("hello");
+
+  // Stap 1: haal de text uit het invul veld
+  var inputElement = document.getElementById("todoInput");
+  var todoText = inputElement.value;
+  console.log(todoText);
+  // Stap 2: maak het inveld weer leeg
+  inputElement.value = null;
+  // Stap 3: Maak een nieuw todoItem aan (li, label, input (checkbox), text)
+  var newTodoElement = document.createElement("li"); // <li>
+  var labelElement = document.createElement("label"); // <label>
+  var checkbox = document.createElement("input"); // <input />
+  checkbox.type = "checkbox"; // <input type="checkbox"/>
+  var todoTextElement = document.createTextNode(todoText); // Learn JS
+
+  newTodoElement.appendChild(labelElement);
+  labelElement.appendChild(checkbox);
+  labelElement.appendChild(todoTextElement);
+  // <li>
+  //   <label><input type="checkbox" />Sweep the floor</label>
+  // </li>
+  //   console.log(newTodoElement);
+  // Stap 4: plak de nieuwe todo op de pagina
+  var ulElement = document.getElementById("todoList");
+  ulElement.appendChild(newTodoElement);
+}
+
+var formElement = document.querySelector("form");
+
+formElement.addEventListener("submit", addNewTodo);
