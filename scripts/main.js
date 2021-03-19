@@ -71,6 +71,7 @@ function addNewTodo(event) {
   var labelElement = document.createElement("label"); // <label>
   var checkbox = document.createElement("input"); // <input />
   checkbox.type = "checkbox"; // <input type="checkbox"/>
+  checkbox.addEventListener("change", toggleDone);
   var todoTextElement = document.createTextNode(todoText); // Learn JS
 
   newTodoElement.appendChild(labelElement);
@@ -83,6 +84,8 @@ function addNewTodo(event) {
   // Stap 4: plak de nieuwe todo op de pagina
   var ulElement = document.getElementById("todoList");
   ulElement.appendChild(newTodoElement);
+
+  updateCounters();
 }
 
 var formElement = document.querySelector("form");
